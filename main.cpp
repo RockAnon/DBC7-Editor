@@ -204,7 +204,7 @@ int APIENTRY _tWinMain(HINSTANCE I, HINSTANCE PI, LPTSTR CL, int SC)
 	ghw_main = CreateWindowEx(
 		0,
 		wc.lpszClassName,
-		_T("4ccEditor Autumn 26 Friendlies Edition (Version D)"),
+		_T("Divegrass Before Christmas 7 Editor"),
 		WS_OVERLAPPEDWINDOW,
 		20, 20, 1320+144, 700,
 		NULL, NULL, ghinst, NULL);
@@ -1095,25 +1095,28 @@ LRESULT CALLBACK wnd_proc(HWND H, UINT M, WPARAM W, LPARAM L)
 					}
 				}
 				break;
-				case IDB_MAKE_BRNZ:
+				case IDB_MAKE_SVLET:
 				{
-					if(HIWORD(W)==BN_CLICKED)
+					if (HIWORD(W) == BN_CLICKED)
 					{
-						_itow_s(bronzeRate, buffer, 3, 10);
+						_itow_s(silverRate+silverManletBonus, buffer, 3, 10);
 						for (int ii = IDT_ABIL_ATKP; ii < gi_lastAbility; ii += 2)
 							SendDlgItemMessage(ghw_tab1, ii, WM_SETTEXT, 0, (LPARAM)buffer);
 
-						_itow_s(bronzeForm, buffer, 3, 10);
+						_itow_s(silverForm, buffer, 3, 10);
 						SendDlgItemMessage(ghw_tab1, IDT_ABIL_FORM, WM_SETTEXT, 0, (LPARAM)buffer);
 
-						_itow_s(bronzeIR, buffer, 3, 10);
+						_itow_s(silverIR, buffer, 3, 10);
 						SendDlgItemMessage(ghw_tab1, IDT_ABIL_INJU, WM_SETTEXT, 0, (LPARAM)buffer);
 
-						_itow_s(bronzeWeakFootUse, buffer, 3, 10);
+						_itow_s(silverWeakFootUse, buffer, 3, 10);
 						SendDlgItemMessage(ghw_tab1, IDT_ABIL_WKUS, WM_SETTEXT, 0, (LPARAM)buffer);
 
-						_itow_s(bronzeWeakFootAcc, buffer, 3, 10);
+						_itow_s(silverWeakFootAcc, buffer, 3, 10);
 						SendDlgItemMessage(ghw_tab1, IDT_ABIL_WKAC, WM_SETTEXT, 0, (LPARAM)buffer);
+
+						_itow_s(heightManlet, buffer, 4, 10);
+						SendDlgItemMessage(ghw_main, IDT_PLAY_HGT, WM_SETTEXT, 0, (LPARAM)buffer);
 					}
 				}
 				break;
@@ -1139,6 +1142,34 @@ LRESULT CALLBACK wnd_proc(HWND H, UINT M, WPARAM W, LPARAM L)
 
 						_itow_s(regWeakFootAcc, buffer, 3, 10);
 						SendDlgItemMessage(ghw_tab1, IDT_ABIL_WKAC, WM_SETTEXT, 0, (LPARAM)buffer);
+					}
+				}
+				break;
+				case IDB_MAKE_BFLET:
+				{
+					if (HIWORD(W) == BN_CLICKED)
+					{
+						//if(ii==IDT_ABIL_DEFP || ii==IDT_ABIL_BWIN || ii==IDT_ABIL_EXPL) //Nerf Defensive Prowess, Ball winning and Explosive power to 72
+						//	SendDlgItemMessage(ghw_tab1, ii, WM_SETTEXT, 0, (LPARAM)_T("77"));
+
+						_itow_s(regRate+manletBonus, buffer, 3, 10);
+						for (int ii = IDT_ABIL_ATKP; ii < gi_lastAbility; ii += 2)
+							SendDlgItemMessage(ghw_tab1, ii, WM_SETTEXT, 0, (LPARAM)buffer);
+
+						_itow_s(regForm, buffer, 3, 10);
+						SendDlgItemMessage(ghw_tab1, IDT_ABIL_FORM, WM_SETTEXT, 0, (LPARAM)buffer);
+
+						_itow_s(regIR, buffer, 3, 10);
+						SendDlgItemMessage(ghw_tab1, IDT_ABIL_INJU, WM_SETTEXT, 0, (LPARAM)buffer);
+
+						_itow_s(regWeakFootUse, buffer, 3, 10);
+						SendDlgItemMessage(ghw_tab1, IDT_ABIL_WKUS, WM_SETTEXT, 0, (LPARAM)buffer);
+
+						_itow_s(regWeakFootAcc, buffer, 3, 10);
+						SendDlgItemMessage(ghw_tab1, IDT_ABIL_WKAC, WM_SETTEXT, 0, (LPARAM)buffer);
+
+						_itow_s(heightManlet, buffer, 4, 10);
+						SendDlgItemMessage(ghw_main, IDT_PLAY_HGT, WM_SETTEXT, 0, (LPARAM)buffer);
 					}
 				}
 				break;

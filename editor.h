@@ -440,7 +440,6 @@ struct player_entry : player_export
 			this->def = pImport.def; 
 			this->gk = pImport.gk; //Goalkeeping 
 			this->drib = pImport.drib; //Dribbling 
-			this->mo_fk = pImport.mo_fk; //Motion: Free Kick
 			this->finish = pImport.finish; //Finishing 
 			this->lowpass = pImport.lowpass; //Low Pass 
 			this->loftpass = pImport.loftpass; //Lofted Pass 
@@ -494,6 +493,7 @@ struct player_entry : player_export
 			this->mo_armd = pImport.mo_armd; //Motion: Arm Movement (dribbling) 
 			this->mo_hunchd = pImport.mo_hunchd; //Motion: Hunching (dribbling) 
 			this->mo_hunchr = pImport.mo_hunchr; //Motion: Hunching (running) 
+			this->mo_fk = pImport.mo_fk; //Motion: Free Kick
 			this->mo_pk = pImport.mo_pk; //Motion: Penalty Kick
 			this->mo_armr = pImport.mo_armr; //Motion: Arm Movement (running) 
 			this->mo_ck = pImport.mo_ck; //Motion: Corner Kick 
