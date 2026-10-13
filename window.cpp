@@ -271,7 +271,7 @@ void setup_main(HWND H)
 
 	ghw_tabcon = CreateWindowEx(WS_EX_CONTROLPARENT, _T("SysTabControl32"), _T(""), 
 		TCS_OWNERDRAWFIXED | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 
-		530, 4, 555+144, 620, H, (HMENU)IDC_TAB_MAIN, GetModuleHandle(NULL), NULL);
+		530, 4, 755+144, 620, H, (HMENU)IDC_TAB_MAIN, GetModuleHandle(NULL), NULL);
 	setup_control(ghw_tabcon, ghFont, from_tab_proc);
 
 	TCITEM ti;

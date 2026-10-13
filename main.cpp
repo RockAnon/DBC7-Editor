@@ -4675,6 +4675,7 @@ LRESULT CALLBACK tab_four_dlg_proc(HWND H, UINT M, WPARAM W, LPARAM L,
 									swprintf_s(buff_y, 3, L"%d", gteams[gn_teamsel].presets[sel].formations[0].players[gi_selected_player_field].y);
 									SetDlgItemText(ghw_tab4, IDT_TACT_PLX, buff_x);
 									SetDlgItemText(ghw_tab4, IDT_TACT_PLY, buff_y);
+									SendDlgItemMessage(ghw_tab4, IDC_TACT_PLPOS, CB_SETCURSEL, gteams[gn_teamsel].presets[sel].formations[gi_formation].players[gi_selected_player_field].pos, 0);
 								}
 
 								populate_tactics_tab(teamOffset, sel, 0, false, true);
@@ -4708,6 +4709,7 @@ LRESULT CALLBACK tab_four_dlg_proc(HWND H, UINT M, WPARAM W, LPARAM L,
 									swprintf_s(buff_y, 3, L"%d", gteams[gn_teamsel].presets[gi_preset].formations[sel].players[gi_selected_player_field].y);
 									SetDlgItemText(ghw_tab4, IDT_TACT_PLX, buff_x);
 									SetDlgItemText(ghw_tab4, IDT_TACT_PLY, buff_y);
+									SendDlgItemMessage(ghw_tab4, IDC_TACT_PLPOS, CB_SETCURSEL, gteams[gn_teamsel].presets[gi_preset].formations[sel].players[gi_selected_player_field].pos, 0);
 								}
 
 								gi_formation = sel;
@@ -5207,6 +5209,7 @@ LRESULT CALLBACK tab_four_dlg_proc(HWND H, UINT M, WPARAM W, LPARAM L,
 									SendDlgItemMessage(ghw_tab4, IDC_TACT_FORM, CB_SETCURSEL, 0, 0);
 									gi_formation = 0;
 									populate_tactics_tab(teamOffset, gi_preset, gi_formation);
+									SendDlgItemMessage(ghw_tab4, IDC_TACT_PLPOS, CB_SETCURSEL, gteams[gn_teamsel].presets[gi_preset].formations[gi_formation].players[gi_selected_player_field].pos, 0);
 								}
 
 								gteams[gn_teamsel].presets[gi_preset].fluid = !gteams[gn_teamsel].presets[gi_preset].fluid;
